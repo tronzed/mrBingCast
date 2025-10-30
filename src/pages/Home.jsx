@@ -5,6 +5,7 @@ import Header from "../component/Header";
 function Home() {
 
     const [castBox, setCastBox] = useState();
+    const [weatherBox, setWeatherBox] = useState();
 
     const getCast = async () => {
 
@@ -20,33 +21,43 @@ function Home() {
 
     const weatherCodeBox = (value) => {
 
-        let box = "";
+        let obj_box = { box: '0', img: '0' }
 
         if (value === 0) {
             box = "Clear sky";
+
         } else if (value === 1) {
-            box = "Mainly clear";
+            obj_box.box = "Mainly clear";
+            obj_box.img = "clear-day";
         } else if (value === 2) {
-            box = "Overcast";
+            obj_box.box = "Overcast";
+            obj_box.img = "overcast";
         } else if (value === 3) {
-            box = "Partly cloudy";
+            obj_box.box = "Partly cloudy";
+            obj_box.img = "cloudy";
         } else if (value >= 45 && value <= 48) {
-            box = "Fog";
+            obj_box.box = "Fog";
+            obj_box.img = "fog";
         } else if (value >= 51 && value <= 57) {
-            box = "Drizzle";
+            obj_box.box = "Drizzle";
+            obj_box.img = "drizzle";
         } else if (value >= 61 && value <= 67) {
-            box = "Rain";
+            obj_box.box = "Rain";
+            obj_box.img = "rain";
         } else if (value >= 71 && value <= 77) {
-            box = "Snow";
+            obj_box.box = "Snow";
+            obj_box.img = "snow";
         } else if (value >= 80 && value <= 82) {
-            box = "Rain showers";
+            obj_box.box = "Rain showers";
+            obj_box.img = "rain";
         } else if (value >= 95 && value <= 99) {
-            box = "Thunderstorms";
+            obj_box.box = "Thunderstorms";
+            obj_box.img = "thunderstorms";
         } else {
-            box = "Unknown weather code";
+            obj_box.box = "Unknown weather code";
         }
 
-        return box;
+        return obj_box;
     }
 
     useEffect(() => {
@@ -79,13 +90,31 @@ function Home() {
 
                             </div>
 
-
                             <div className="weather_box_cover">
                                 <ul className="list_box">
-                                    <li><span>Weather</span>{weatherCodeBox(castBox?.current_weather?.weathercode)}</li>
+                                    <li><span>Weather</span>
+
+                                        {(() => {
+
+                                            const weather = weatherCodeBox(castBox?.current_weather?.weathercode);
+
+                                            return (<>
+
+                                                <div className="box">
+                                                    <img src={`./img/weather_img/${weather.img}.svg`} alt="" />
+                                                    {weather.box}
+                                                </div>
+
+                                            </>)
+
+                                        })()}
+
+
+
+                                    </li>
                                     <li><span>Temp</span>{castBox?.current_weather?.temperature}{castBox?.current_weather_units?.temperature}</li>
                                     <li><span>Wind</span>{castBox?.current_weather?.windspeed}{castBox?.current_weather_units?.windspeed}</li>
-                                    <li><span>Now</span>{castBox?.current_weather?.is_day ? "Day" : "Night"}</li>
+                                    <li><span>Now</span><div className="box"><img src={`./img/weather_img/clear-${castBox?.current_weather?.is_day ? "day" : "night"}.svg`} alt="" />{castBox?.current_weather?.is_day ? "Day" : "Night"}</div></li>
                                 </ul>
                             </div>
 

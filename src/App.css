@@ -5,7 +5,9 @@
 
 .weather_box_cover .list_box li {
     color: #fff;
-    font-size: 35px;
+    font-size: 30px;
+    flex-grow: 1;
+    padding: 0 11px;
 }
 
 .weather_box_cover {
@@ -16,12 +18,17 @@
 
 .weather_box_cover .list_box {
     display: flex;
-    gap: 45px;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .weather_box_cover .list_box li span {
     display: block;
     font-size: 14px;
     color: #b7b7b7;
+}
+
+.weather_box_cover .list_box li .box img {
+    max-width: 75px;
+    height: 55px;
 }
