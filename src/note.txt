@@ -16,7 +16,7 @@ Framer Motion for smooth animations
 react-sound / Howler.js for ambient audio
 
 
-☂️ 2. “Should I Go Out?” — Fun Decision-Maker App
+☂️ 2. “Should I Go Out?” — Fun Decision-Maker App 
 Concept:
  A sarcastic/funny app that uses Open-Meteo’s weather data to decide if you should leave the house today.
 Example Responses:
@@ -51,3 +51,11 @@ https://themewagon.github.io/travelix/index.html
 https://themewagon.github.io/fantasy/
 
 https://technext.github.io/dorne/index.html
+
+
+________________________
+
+
+weather icons
+
+https://basmilius.github.io/weather-icons/index-fill.html

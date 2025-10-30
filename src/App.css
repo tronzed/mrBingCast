@@ -1,0 +1,27 @@
+.hide_me {
+    display: none;
+}
+
+
+.weather_box_cover .list_box li {
+    color: #fff;
+    font-size: 35px;
+}
+
+.weather_box_cover {
+    margin-top: 35px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.weather_box_cover .list_box {
+    display: flex;
+    gap: 45px;
+    justify-content: space-between;
+}
+
+.weather_box_cover .list_box li span {
+    display: block;
+    font-size: 14px;
+    color: #b7b7b7;
+}
