@@ -24,8 +24,8 @@ function Home() {
         let obj_box = { box: '0', img: '0' }
 
         if (value === 0) {
-            box = "Clear sky";
-
+            obj_box.box = "Mainly clear";
+            obj_box.img = "clear-day";
         } else if (value === 1) {
             obj_box.box = "Mainly clear";
             obj_box.img = "clear-day";
@@ -78,7 +78,7 @@ function Home() {
             {/* ***** Welcome Area Start ***** */}
             <section
                 className="dorne-welcome-area bg-img bg-overlay"
-                style={{ backgroundImage: "url(img/bg-img/hero-1.jpg)" }}
+                style={{ backgroundImage: `url('./img/weather_bg/${weatherCodeBox(castBox?.current_weather?.weathercode).img}.jpg')` }}
             >
                 <div className="container h-100">
                     <div className="row h-100 align-items-center justify-content-center">
