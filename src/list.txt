@@ -1,0 +1,7 @@
+
+
+- search city
+
+- 7 day forcast
+
+- ask mr bing 

@@ -11,7 +11,7 @@
 }
 
 .weather_box_cover {
-    margin-top: 35px;
+    margin-bottom: 35px;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 8px;
@@ -32,4 +32,35 @@
 .weather_box_cover .list_box li .box img {
     max-width: 75px;
     height: 55px;
+}
+
+.img-res {
+    max-width: 100%;
+}
+
+.header_area .navbar-brand {
+    max-width: 188px;
+}
+
+.city_box_cover {
+    margin-bottom: 20px;
+}
+
+.city_box_cover h4 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.city_box_cover i {
+    color: #16aff6;
+    margin-right: 8px;
+    font-size: 22px;
+}
+
+.mrbing_box {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0.1;
 }

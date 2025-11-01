@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 function Header() {
     return (
@@ -31,7 +32,7 @@ function Header() {
                         <div className="col-12 h-100">
                             <nav className="h-100 navbar navbar-expand-lg">
                                 <a className="navbar-brand" href="index.html">
-                                    <img src="img/core-img/logo.png" alt="" />
+                                    <img className="img-res" src="img/logo.png" alt="" />
                                 </a>
                                 <button
                                     className="navbar-toggler"
@@ -47,99 +48,20 @@ function Header() {
                                 {/* Nav */}
                                 <div className="collapse navbar-collapse" id="dorneNav">
                                     <ul className="navbar-nav mr-auto" id="dorneMenu">
-                                        <li className="nav-item active">
-                                            <a className="nav-link" href="index.html">
-                                                Home <span className="sr-only">(current)</span>
-                                            </a>
-                                        </li>
-                                        <li className="nav-item dropdown">
-                                            <a
-                                                className="nav-link dropdown-toggle"
-                                                href="#"
-                                                id="navbarDropdown"
-                                                role="button"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true"
-                                                aria-expanded="false"
-                                            >
-                                                Explore{" "}
-                                                <i className="fa fa-angle-down" aria-hidden="true" />
-                                            </a>
-                                            <div
-                                                className="dropdown-menu"
-                                                aria-labelledby="navbarDropdown"
-                                            >
-                                                <a className="dropdown-item" href="index.html">
-                                                    Home
-                                                </a>
-                                                <a className="dropdown-item" href="explore.html">
-                                                    Explore
-                                                </a>
-                                                <a className="dropdown-item" href="listing.html">
-                                                    Listing
-                                                </a>
-                                                <a className="dropdown-item" href="single-listing.html">
-                                                    Single Listing
-                                                </a>
-                                                <a className="dropdown-item" href="contact.html">
-                                                    Contact
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li className="nav-item dropdown">
-                                            <a
-                                                className="nav-link dropdown-toggle"
-                                                href="#"
-                                                id="navbarDropdown2"
-                                                role="button"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true"
-                                                aria-expanded="false"
-                                            >
-                                                Listings{" "}
-                                                <i className="fa fa-angle-down" aria-hidden="true" />
-                                            </a>
-                                            <div
-                                                className="dropdown-menu"
-                                                aria-labelledby="navbarDropdown2"
-                                            >
-                                                <a className="dropdown-item" href="index.html">
-                                                    Home
-                                                </a>
-                                                <a className="dropdown-item" href="explore.html">
-                                                    Explore
-                                                </a>
-                                                <a className="dropdown-item" href="listing.html">
-                                                    Listing
-                                                </a>
-                                                <a className="dropdown-item" href="single-listing.html">
-                                                    Single Listing
-                                                </a>
-                                                <a className="dropdown-item" href="contact.html">
-                                                    Contact
-                                                </a>
-                                            </div>
-                                        </li>
                                         <li className="nav-item">
-                                            <a className="nav-link" href="contact.html">
-                                                Contact
-                                            </a>
+                                            <Link className="nav-link" to="/">Home</Link>
                                         </li>
                                     </ul>
                                     {/* Search btn */}
                                     <div className="dorne-search-btn">
                                         <a id="search-btn" href="#">
-                                            <i className="fa fa-search" aria-hidden="true" /> Search
+                                            <i className="fa fa-search" aria-hidden="true" /> Search By City
                                         </a>
-                                    </div>
-                                    {/* Signin btn */}
-                                    <div className="dorne-signin-btn">
-                                        <a href="#">Sign in or Register</a>
                                     </div>
                                     {/* Add listings btn */}
                                     <div className="dorne-add-listings-btn">
                                         <a href="#" className="btn dorne-btn">
-                                            + Add Listings
+                                            About Mr Bing
                                         </a>
                                     </div>
                                 </div>

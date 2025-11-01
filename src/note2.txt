@@ -16,6 +16,8 @@ Chandler Quotes of the Day: Random quote overlaying the weather background.
 
 Friends Easter Eggs: Subtle icons for Monica, Joey, Ross, etc., that react to weather (like Joey eating ice cream when sunny, Phoebe floating in rain).
 
+_____________________________________________________________________________
+
 2. Pages & Features
 
 Home Page:
@@ -55,6 +57,8 @@ Fun Extras:
 Trivia Section: “Did Chandler ever complain about weather?” (link jokes from Friends episodes).
 
 Sarcastic News Headlines: “Global Warming? Yeah, tell me something I don’t know.”
+
+_____________________________________________________________________________
 
 3. Technical / UX Ideas
 

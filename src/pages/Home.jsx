@@ -5,12 +5,16 @@ import Header from "../component/Header";
 function Home() {
 
     const [castBox, setCastBox] = useState();
-    const [weatherBox, setWeatherBox] = useState();
 
     const getCast = async () => {
 
-        const latitude = 26.922070;
-        const longitude = 75.778885;
+        const latitude = 32.2432;
+        const longitude = 77.1892;
+
+        // const latitude = 26.922070;
+        // const longitude = 75.778885;
+
+
         const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}` +
             `&current_weather=true&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m`;
 
@@ -80,16 +84,17 @@ function Home() {
                 className="dorne-welcome-area bg-img bg-overlay"
                 style={{ backgroundImage: `url('./img/weather_bg/${weatherCodeBox(castBox?.current_weather?.weathercode).img}.jpg')` }}
             >
+                
+                <div className="mrbing_box">
+                    <img className="img-res" src="./img/mrbing.png" alt="" />
+                </div>
+
                 <div className="container h-100">
                     <div className="row h-100 align-items-center justify-content-center">
                         <div className="col-12 col-md-10">
-                            <div className="hero-content">
-                                <h2>Should I Go Out?</h2>
-                                <h4>Because apparently, this site knows my city better than I do.</h4>
-                                {/* <h4>Let Chandler Bing decide… because your judgment clearly needs help.</h4> */}
-
+                            <div className="city_box_cover">
+                                <h4><i class="fa fa-map-marker" aria-hidden="true"></i>Jaipur</h4>
                             </div>
-
                             <div className="weather_box_cover">
                                 <ul className="list_box">
                                     <li><span>Weather</span>
@@ -112,12 +117,16 @@ function Home() {
 
 
                                     </li>
-                                    <li><span>Temp</span>{castBox?.current_weather?.temperature}{castBox?.current_weather_units?.temperature}</li>
-                                    <li><span>Wind</span>{castBox?.current_weather?.windspeed}{castBox?.current_weather_units?.windspeed}</li>
+                                    <li><span>Temp</span><div className="box"><img src={`./img/weather_img/thermometer.svg`} alt="" />{castBox?.current_weather?.temperature}{castBox?.current_weather_units?.temperature}</div></li>
+                                    <li><span>Wind</span><div className="box"><img src={`./img/weather_img/wind.svg`} alt="" />{castBox?.current_weather?.windspeed}{castBox?.current_weather_units?.windspeed}</div></li>
                                     <li><span>Now</span><div className="box"><img src={`./img/weather_img/clear-${castBox?.current_weather?.is_day ? "day" : "night"}.svg`} alt="" />{castBox?.current_weather?.is_day ? "Day" : "Night"}</div></li>
                                 </ul>
                             </div>
-
+                            <div className="hero-content">
+                                <h2>Should I Go Out?</h2>
+                                <h4>Because apparently, this site knows my city better than I do.</h4>
+                                <a href="#" class="btn dorne-btn mt-50">Ask Mr Bing</a>
+                            </div>
 
                             {/* Hero Search Form */}
                             <div className="hero-search-form hide_me">
@@ -355,7 +364,7 @@ function Home() {
             {/* ***** About Area End ***** */}
             {/* ***** Editor Pick Area Start ***** */}
             <section
-                className="dorne-editors-pick-area bg-img bg-overlay-9 section-padding-100"
+                className="hide_me dorne-editors-pick-area bg-img bg-overlay-9 section-padding-100"
                 style={{ backgroundImage: "url(img/bg-img/hero-2.jpg)" }}
             >
                 <div className="container">
@@ -423,7 +432,7 @@ function Home() {
             </section>
             {/* ***** Editor Pick Area End ***** */}
             {/* ***** Features Destinations Area Start ***** */}
-            <section className="dorne-features-destinations-area">
+            <section className="hide_me dorne-features-destinations-area">
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-12">
@@ -748,7 +757,7 @@ function Home() {
             {/* ***** Features Restaurant Area End ***** */}
             {/* ***** Features Events Area Start ***** */}
             <section
-                className="dorne-features-events-area bg-img bg-overlay-9 section-padding-100-50"
+                className="dorne-features-events-area bg-img bg-overlay-9 section-padding-100-50 hide_me"
                 style={{ backgroundImage: "url(img/bg-img/hero-3.jpg)" }}
             >
                 <div className="container">
