@@ -8,15 +8,18 @@ function Home() {
 
     const getCast = async () => {
 
-        const latitude = 32.2432;
-        const longitude = 77.1892;
+        // const latitude = 18.9582;
+        // const longitude = 72.8321;
 
-        // const latitude = 26.922070;
-        // const longitude = 75.778885;
+        const latitude = 26.922070;
+        const longitude = 75.778885;
 
 
         const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}` +
-            `&current_weather=true&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m`;
+            `&current_weather=true` +
+            `&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m` +
+            `&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max` +
+            `&forecast_days=7&timezone=auto`;
 
         const res = await fetch(url);
         const data = await res.json();
@@ -73,9 +76,8 @@ function Home() {
         <>
 
 
-            {console.log('---as-da-sd-asd-', weatherCodeBox(95))}
+            {console.log('---as-da-sd-asd-', castBox)}
 
-            {/* {console.log(castBox, '-----castBox------')} */}
 
             <Header />
 
@@ -84,7 +86,7 @@ function Home() {
                 className="dorne-welcome-area bg-img bg-overlay"
                 style={{ backgroundImage: `url('./img/weather_bg/${weatherCodeBox(castBox?.current_weather?.weathercode).img}.jpg')` }}
             >
-                
+
                 <div className="mrbing_box">
                     <img className="img-res" src="./img/mrbing.png" alt="" />
                 </div>
@@ -98,9 +100,7 @@ function Home() {
                             <div className="weather_box_cover">
                                 <ul className="list_box">
                                     <li><span>Weather</span>
-
                                         {(() => {
-
                                             const weather = weatherCodeBox(castBox?.current_weather?.weathercode);
 
                                             return (<>
@@ -113,15 +113,69 @@ function Home() {
                                             </>)
 
                                         })()}
-
-
-
                                     </li>
                                     <li><span>Temp</span><div className="box"><img src={`./img/weather_img/thermometer.svg`} alt="" />{castBox?.current_weather?.temperature}{castBox?.current_weather_units?.temperature}</div></li>
                                     <li><span>Wind</span><div className="box"><img src={`./img/weather_img/wind.svg`} alt="" />{castBox?.current_weather?.windspeed}{castBox?.current_weather_units?.windspeed}</div></li>
                                     <li><span>Now</span><div className="box"><img src={`./img/weather_img/clear-${castBox?.current_weather?.is_day ? "day" : "night"}.svg`} alt="" />{castBox?.current_weather?.is_day ? "Day" : "Night"}</div></li>
                                 </ul>
+                                <div className="seven_box">
+                                    <ul>
+                                        <li>
+                                            <span className="day_box">{castBox?.daily?.time[0]}</span>
+                                            <div className="text_box">
+                                                <span className="img_box"><img className="img-res" src={`./img/weather_img/${weatherCodeBox(castBox?.daily?.weathercode[0]).img}.svg`} alt="" /></span>
+                                                <span className="temp_box">{castBox?.daily?.temperature_2m_max[0]}°C</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span className="day_box">{castBox?.daily?.time[1]}</span>
+                                            <div className="text_box">
+                                                <span className="img_box"><img className="img-res" src={`./img/weather_img/${weatherCodeBox(castBox?.daily?.weathercode[1]).img}.svg`} alt="" /></span>
+                                                <span className="temp_box">{castBox?.daily?.temperature_2m_max[1]}°C</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span className="day_box">{castBox?.daily?.time[2]}</span>
+                                            <div className="text_box">
+                                                <span className="img_box"><img className="img-res" src={`./img/weather_img/${weatherCodeBox(castBox?.daily?.weathercode[2]).img}.svg`} alt="" /></span>
+                                                <span className="temp_box">{castBox?.daily?.temperature_2m_max[2]}°C</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span className="day_box">{castBox?.daily?.time[3]}</span>
+                                            <div className="text_box">
+                                                <span className="img_box"><img className="img-res" src={`./img/weather_img/${weatherCodeBox(castBox?.daily?.weathercode[3]).img}.svg`} alt="" /></span>
+                                                <span className="temp_box">{castBox?.daily?.temperature_2m_max[3]}°C</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span className="day_box">{castBox?.daily?.time[4]}</span>
+                                            <div className="text_box">
+                                                <span className="img_box"><img className="img-res" src={`./img/weather_img/${weatherCodeBox(castBox?.daily?.weathercode[4]).img}.svg`} alt="" /></span>
+                                                <span className="temp_box">{castBox?.daily?.temperature_2m_max[4]}°C</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span className="day_box">{castBox?.daily?.time[5]}</span>
+                                            <div className="text_box">
+                                                <span className="img_box"><img className="img-res" src={`./img/weather_img/${weatherCodeBox(castBox?.daily?.weathercode[5]).img}.svg`} alt="" /></span>
+                                                <span className="temp_box">{castBox?.daily?.temperature_2m_max[5]}°C</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span className="day_box">{castBox?.daily?.time[6]}</span>
+                                            <div className="text_box">
+                                                <span className="img_box"><img className="img-res" src={`./img/weather_img/${weatherCodeBox(castBox?.daily?.weathercode[6]).img}.svg`} alt="" /></span>
+                                                <span className="temp_box">{castBox?.daily?.temperature_2m_max[6]}°C</span>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
                             </div>
+
+
+
                             <div className="hero-content">
                                 <h2>Should I Go Out?</h2>
                                 <h4>Because apparently, this site knows my city better than I do.</h4>
