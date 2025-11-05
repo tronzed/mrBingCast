@@ -6,13 +6,18 @@ function Home() {
 
     const [castBox, setCastBox] = useState();
 
+    const [bingQuote, setBingQuote] = useState();
+
     const getCast = async () => {
 
-        // const latitude = 18.9582;
-        // const longitude = 72.8321;
 
-        const latitude = 26.922070;
-        const longitude = 75.778885;
+        const latitude = 32.2432;
+        const longitude = 77.1892;
+
+
+        // const latitude = 26.922070;
+        // const longitude = 75.778885;
+
 
 
         const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}` +
@@ -26,40 +31,52 @@ function Home() {
         setCastBox(data);
     }
 
+
+
     const weatherCodeBox = (value) => {
 
-        let obj_box = { box: '0', img: '0' }
+        let obj_box = { box: '0', img: '0', quote: '0' }
 
         if (value === 0) {
             obj_box.box = "Mainly clear";
             obj_box.img = "clear-day";
+            obj_box.quote = 'Oh look, the sky is trying its best. Mainly clear? So like Joey mainly understanding sarcasm. Still… stay inside. The sun can’t annoy you if you ignore it.';
         } else if (value === 1) {
             obj_box.box = "Mainly clear";
             obj_box.img = "clear-day";
+            obj_box.quote = 'Oh look, the sky is trying its best. Mainly clear? So like Joey mainly understanding sarcasm. Still… stay inside. The sun can’t annoy you if you ignore it.';
         } else if (value === 2) {
             obj_box.box = "Overcast";
             obj_box.img = "overcast";
+            obj_box.quote = 'Ah yes, the sky’s version of ‘I’m fine.’ Totally fine. Grey, depressing, perfect weather to stay indoors and re-think all your life choices.';
         } else if (value === 3) {
             obj_box.box = "Partly cloudy";
             obj_box.img = "cloudy";
+            obj_box.quote = "So the sky couldn’t decide? Classic commitment issues. It's like dating someone who says ‘Let’s see where this goes.’ Spoiler: It goes nowhere. Stay home.";
         } else if (value >= 45 && value <= 48) {
             obj_box.box = "Fog";
             obj_box.img = "fog";
+            obj_box.quote = 'Great, now the world looks like it’s buffering. If you go out, you’ll either get lost or run into a lamppost. Stay inside, save your dignity.';
         } else if (value >= 51 && value <= 57) {
             obj_box.box = "Drizzle";
             obj_box.img = "drizzle";
+            obj_box.quote = 'Oh good, the sky is crying softly. Probably because it saw your weekend plans. Not heavy rain, just enough to ruin your hair and your will to live. Stay in.';
         } else if (value >= 61 && value <= 67) {
             obj_box.box = "Rain";
             obj_box.img = "rain";
+            obj_box.quote = 'Rain: where the sky throws emotional damage at you in liquid form. Go out if you want to smell like a wet umbrella.';
         } else if (value >= 71 && value <= 77) {
             obj_box.box = "Snow";
             obj_box.img = "snow";
+            obj_box.quote = "Snow looks cute until you have to walk in it and suddenly you become Bambi on ice. Stay inside unless you’re a penguin or emotionally stable. (You're neither.)";
         } else if (value >= 80 && value <= 82) {
             obj_box.box = "Rain showers";
             obj_box.img = "rain";
+            obj_box.quote = 'Showers? Yeah, just like your ex — arrives suddenly, ruins everything, and leaves you cold. Indoor activities highly recommended.';
         } else if (value >= 95 && value <= 99) {
             obj_box.box = "Thunderstorms";
             obj_box.img = "thunderstorms";
+            obj_box.quote = 'Oh yeah, let’s mix rain with loud sky rage. If you wanted drama, congratulations. Otherwise, stay in unless you want to reenact a horror movie intro.';
         } else {
             obj_box.box = "Unknown weather code";
         }
@@ -95,7 +112,7 @@ function Home() {
                     <div className="row h-100 align-items-center justify-content-center">
                         <div className="col-12 col-md-10">
                             <div className="city_box_cover">
-                                <h4><i class="fa fa-map-marker" aria-hidden="true"></i>Jaipur</h4>
+                                <h4><i className="fa fa-map-marker" aria-hidden="true"></i>Jaipur</h4>
                             </div>
                             <div className="weather_box_cover">
                                 <ul className="list_box">
@@ -171,6 +188,7 @@ function Home() {
                                         </li>
 
                                     </ul>
+
                                 </div>
                             </div>
 
@@ -179,7 +197,7 @@ function Home() {
                             <div className="hero-content">
                                 <h2>Should I Go Out?</h2>
                                 <h4>Because apparently, this site knows my city better than I do.</h4>
-                                <a href="#" class="btn dorne-btn mt-50">Ask Mr Bing</a>
+                                <button className="btn dorne-btn mt-50" type="button" data-toggle="modal" data-target="#exampleModal">Ask Mr Bing</button>
                             </div>
 
                             {/* Hero Search Form */}
@@ -639,7 +657,7 @@ function Home() {
             </section>
             {/* ***** Features Destinations Area End ***** */}
             {/* ***** Features Restaurant Area Start ***** */}
-            <section className="dorne-features-restaurant-area bg-default ">
+            <section className="dorne-features-restaurant-area bg-default hide_me">
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-12">
@@ -992,7 +1010,7 @@ function Home() {
             </section>
             {/* ***** Features Events Area End ***** */}
             {/* ***** Clients Area Start ***** */}
-            <div className="dorne-clients-area section-padding-100">
+            <div className="dorne-clients-area section-padding-100 hide_me">
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-12">
@@ -1007,6 +1025,26 @@ function Home() {
                     </div>
                 </div>
             </div>
+
+
+
+            <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">Mr Bing Advices</h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div className="modal-body">
+                            {weatherCodeBox(castBox?.current_weather?.weathercode).quote}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             {/* ***** Clients Area End ***** */}
 
             <Footer />
