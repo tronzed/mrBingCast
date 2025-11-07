@@ -1,26 +1,47 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import { weatherCodeBox, getCast } from "../utils/function"
+
+
 function Header() {
+
+    const [searchSign, setSearchSign] = useState(false);
+
+    const [valueBox, setValueBox] = useState();
+
+    const getLoc = (e) => {
+
+        e.preventDefault();
+        getCast(valueBox);
+        console.log(valueBox);
+
+    }
+
     return (
         <>
 
             {/* ***** Search Form Area ***** */}
-            <div className="dorne-search-form d-flex align-items-center">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12">
-                            <div className="search-close-btn" id="closeBtn">
-                                <i className="pe-7s-close-circle" aria-hidden="true" />
+            <div className={searchSign ? "search-form-on" : ""}>
+                <div className="dorne-search-form d-flex align-items-center">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-12">
+                                <div className="search-close-btn" id="closeBtn">
+                                    <i onClick={() => { setSearchSign(false) }} className="pe-7s-close-circle" aria-hidden="true" />
+                                </div>
+                                <form onSubmit={getLoc} >
+                                    <input
+                                        type="search"
+                                        name="caviarSearch"
+                                        id="search"
+                                        placeholder="Search Your Desire Destinations or Events"
+                                        value={valueBox}
+                                        onChange={(e) => { setValueBox(e.target.value) }}
+                                    />
+                                    <input onClick={getLoc} type="submit" className="d-none" defaultValue="submit" />
+                                </form>
                             </div>
-                            <form action="#" method="get">
-                                <input
-                                    type="search"
-                                    name="caviarSearch"
-                                    id="search"
-                                    placeholder="Search Your Desire Destinations or Events"
-                                />
-                                <input type="submit" className="d-none" defaultValue="submit" />
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -54,7 +75,7 @@ function Header() {
                                     </ul>
                                     {/* Search btn */}
                                     <div className="dorne-search-btn">
-                                        <a id="search-btn" href="#">
+                                        <a onClick={() => { setSearchSign(true) }} id="search-btn" href="#">
                                             <i className="fa fa-search" aria-hidden="true" /> Search By City
                                         </a>
                                     </div>
