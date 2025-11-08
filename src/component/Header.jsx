@@ -1,21 +1,21 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { weatherCodeBox, getCast } from "../utils/function"
 
+import { GlobalContext } from "../App";
 
 function Header() {
 
     const [searchSign, setSearchSign] = useState(false);
-
     const [valueBox, setValueBox] = useState();
 
+    const { getWeather } = useContext(GlobalContext);
+
     const getLoc = (e) => {
-
         e.preventDefault();
-        getCast(valueBox);
+        getWeather(valueBox);
         console.log(valueBox);
-
     }
 
     return (
@@ -46,6 +46,7 @@ function Header() {
                     </div>
                 </div>
             </div>
+
             {/* ***** Header Area Start ***** */}
             <header className="header_area" id="header">
                 <div className="container-fluid h-100">
@@ -81,9 +82,9 @@ function Header() {
                                     </div>
                                     {/* Add listings btn */}
                                     <div className="dorne-add-listings-btn">
-                                        <a href="#" className="btn dorne-btn">
+                                        <button onClick={() => { promtasd("effe") }} href="#" className="btn dorne-btn">
                                             About Mr Bing
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                             </nav>

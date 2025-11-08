@@ -50,19 +50,19 @@ export const weatherCodeBox = (value) => {
 }
 
 
-
-export const getCast = async (city) => {
+export const getCast = async (city = "new york") => {
 
     const res2 = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}`);
     const data2 = await res2.json();
 
-    console.log('data2', data2);
+    // console.log('data2', data2);
 
-    // const latitude = 12.9629;
-    // const longitude = 77.5775;
+    // console.log('jaipur', data2.results[0].name);
+    // console.log('latitude', data2.results[0].latitude);
+    // console.log('longitude', data2.results[0].longitude);
 
-    const latitude = 26.922070;
-    const longitude = 75.778885;
+    const latitude = await data2.results[0].latitude;
+    const longitude = await data2.results[0].longitude;
 
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}` +
         `&current_weather=true` +
@@ -73,7 +73,9 @@ export const getCast = async (city) => {
     const res = await fetch(url);
     const data = await res.json();
 
+    data.city = data2.results[0].name;
+
+
     return data;
 
 }
-
