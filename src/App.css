@@ -126,7 +126,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(22, 175, 246, 0.98);
-    z-index: 9999;
+    z-index: 9999999;
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -135,4 +135,64 @@
 
 .loader_box_cover .lotti_box {
     max-width: 200px;
+}
+
+
+.ask_btn {
+    margin-top: 50px;
+}
+
+/* responsive */
+
+
+@media screen and (max-width:768px) {
+
+    .header_area {
+        background-color: rgba(0, 0, 0, 0.1);
+        height: auto;
+        border: 0;
+    }
+
+    .header_area .navbar-brand {
+        max-width: 115px;
+    }
+
+    .weather_box_cover .list_box li .box img {
+        height: 28px;
+    }
+
+    .weather_box_cover .list_box li {
+        font-size: 14px;
+        padding: 2px;
+    }
+
+    .dorne-welcome-area {
+        height: auto;
+        padding: 112px 0 20px;
+    }
+
+    .seven_box ul {
+        gap: 5px;
+    }
+
+    .seven_box ul li {
+        padding: 4px 5px;
+    }
+
+    .navbar-toggler {
+        margin: 11px 0;
+    }
+
+    .navbar {
+        padding: .5rem 0;
+    }
+
+    .ask_btn {
+        margin-top: 11px;
+    }
+
+    .weather_box_cover {
+        margin-bottom: 8px;
+    }
+
 }

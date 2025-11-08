@@ -127,7 +127,7 @@ function Home() {
                             <div className="hero-content">
                                 <h2>Should I Go Out?</h2>
                                 <h4>Because apparently, this site knows my city better than I do.</h4>
-                                <button className="btn dorne-btn mt-50" type="button" data-toggle="modal" data-target="#exampleModal">Ask Mr Bing</button>
+                                <button className="ask_btn btn dorne-btn" type="button" data-toggle="modal" data-target="#exampleModal">Ask Mr Bing</button>
                             </div>
 
 

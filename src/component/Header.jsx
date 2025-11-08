@@ -53,9 +53,9 @@ function Header() {
                     <div className="row h-100">
                         <div className="col-12 h-100">
                             <nav className="h-100 navbar navbar-expand-lg">
-                                <a className="navbar-brand" href="index.html">
+                                <Link className="navbar-brand" to="/">
                                     <img className="img-res" src="img/logo.png" alt="" />
-                                </a>
+                                </Link>
                                 <button
                                     className="navbar-toggler"
                                     type="button"
@@ -82,9 +82,9 @@ function Header() {
                                     </div>
                                     {/* Add listings btn */}
                                     <div className="dorne-add-listings-btn">
-                                        <button onClick={() => { promtasd("effe") }} href="#" className="btn dorne-btn">
+                                        <a href="https://en.wikipedia.org/wiki/Chandler_Bing" target="_blank" className="btn dorne-btn">
                                             About Mr Bing
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </nav>
