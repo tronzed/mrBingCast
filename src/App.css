@@ -13,7 +13,7 @@
 .weather_box_cover {
     margin-bottom: 35px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 8px;
 }
 
@@ -170,6 +170,8 @@
 }
 
 
+
+
 /* responsive */
 
 @media screen and (max-width:768px) {
@@ -181,7 +183,7 @@
     }
 
     .header_area .navbar-brand {
-        max-width: 115px;
+        max-width: 90px;
     }
 
     .weather_box_cover .list_box li .box img {
@@ -265,5 +267,26 @@
         height: 100vh;
     }
 
+    .hide_mobile {
+        display: none;
+    }
+
+    .search-form-on #closeBtn {
+        top: 38px;
+    }
+
+    .search-form-on .col-12 {
+        position: static;
+    }
+
+    .dorne-search-form form input {
+        border-color: #fff;
+    }
+
+    .dorne-search-form .btn {
+        width: 100%;
+        margin-top: 12px;
+        border-radius: 0;
+    }
 
 }

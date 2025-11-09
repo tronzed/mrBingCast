@@ -1,8 +1,5 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-
-import { weatherCodeBox, getCast } from "../utils/function"
-
 import { GlobalContext } from "../App";
 
 function Header() {
@@ -14,8 +11,8 @@ function Header() {
 
     const getLoc = (e) => {
         e.preventDefault();
-        getWeather(valueBox);
-        console.log(valueBox);
+        setSearchSign(false);
+        getWeather(valueBox);        
     }
 
     return (
@@ -39,7 +36,7 @@ function Header() {
                                         value={valueBox}
                                         onChange={(e) => { setValueBox(e.target.value) }}
                                     />
-                                    <input onClick={getLoc} type="submit" className="d-none" defaultValue="submit" />
+                                    <button className="btn hide_desk_box" type="submit">Search</button>
                                 </form>
                             </div>
                         </div>
@@ -62,7 +59,7 @@ function Header() {
                                     </a>
                                 </div>
                                 <button
-                                    className="navbar-toggler"
+                                    className="navbar-toggler hide_mobile"
                                     type="button"
                                     data-toggle="collapse"
                                     data-target="#dorneNav"

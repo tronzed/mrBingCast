@@ -51,7 +51,7 @@ function Home() {
                                 <div className="city_box_cover">
                                     <h4><i className="fa fa-map-marker" aria-hidden="true"></i>{globalData.city}</h4>
                                 </div>
-                                <button className="btn border-btn">Get My Weather</button>
+                                <button className="btn border-btn hide_me">Get My Weather</button>
                             </div>
 
 
