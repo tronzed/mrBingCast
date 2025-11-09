@@ -289,4 +289,12 @@
         border-radius: 0;
     }
 
+    .dorne-welcome-area {
+        height: 100vh;
+    }
+
+    .dorne-search-form form {
+        top: -75px;
+    }
+
 }

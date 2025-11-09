@@ -13,7 +13,6 @@ function Home() {
 
     const [loader, setLoader] = useState(true);
 
-
     const [daysShow, setDaysShow] = useState(false);
 
 
