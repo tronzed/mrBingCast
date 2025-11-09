@@ -9,15 +9,19 @@ export default function WeatherForecast() {
 
   const [globalData, setGlobalData] = useState('jaipur');
 
+  const [loader, setLoader] = useState(true);
+
+
   const getWeather = async (val) => {
     const data = await getCast(val);
     setGlobalData(data)
+    setLoader(false);
   }
 
 
   return (
     <>
-      <GlobalContext.Provider value={{ globalData, setGlobalData, getWeather }}>
+      <GlobalContext.Provider value={{ globalData, setGlobalData, getWeather, loader, setLoader }}>
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Home />} />

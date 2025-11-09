@@ -1,22 +1,26 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { GlobalContext } from "../App";
+import Loader from "./Loader";
 
 function Header() {
 
     const [searchSign, setSearchSign] = useState(false);
     const [valueBox, setValueBox] = useState();
 
-    const { getWeather } = useContext(GlobalContext);
+    const { getWeather, loader, setLoader } = useContext(GlobalContext);
 
     const getLoc = (e) => {
+        setLoader(true);
         e.preventDefault();
         setSearchSign(false);
-        getWeather(valueBox);        
+        getWeather(valueBox);
     }
 
     return (
         <>
+
+            <Loader loader={loader} />
 
             {/* ***** Search Form Area ***** */}
             <div className={searchSign ? "search-form-on" : ""}>

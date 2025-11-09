@@ -9,12 +9,10 @@ import Loader from "../component/Loader";
 
 function Home() {
 
-    const { globalData, setGlobalData } = useContext(GlobalContext);
+    const { globalData, setGlobalData, setLoader } = useContext(GlobalContext);
 
-    const [loader, setLoader] = useState(true);
 
     const [daysShow, setDaysShow] = useState(false);
-
 
     useEffect(() => {
         const fetchData = async () => {
@@ -28,7 +26,6 @@ function Home() {
     return (
         <>
 
-            <Loader loader={loader} />
 
             <Header />
 

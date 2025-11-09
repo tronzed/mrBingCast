@@ -4,9 +4,7 @@ import animationData from "../assets/img/lotti/Weather.json";
 
 export default function Loader({loader}) {
 
-
     if (!loader) return null;
-
 
     return (
 
