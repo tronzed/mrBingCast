@@ -45,9 +45,16 @@ function Home() {
                 <div className="container h-100">
                     <div className="row h-100 align-items-center justify-content-center">
                         <div className="col-12 col-md-10">
-                            <div className="city_box_cover">
-                                <h4><i className="fa fa-map-marker" aria-hidden="true"></i>{globalData.city}</h4>
+
+
+                            <div className="city_weather_box">
+                                <div className="city_box_cover">
+                                    <h4><i className="fa fa-map-marker" aria-hidden="true"></i>{globalData.city}</h4>
+                                </div>
+                                <button className="btn border-btn">Get My Weather</button>
                             </div>
+
+
                             <div className="weather_box_cover">
                                 <ul className="list_box">
                                     <li><span>Weather</span>

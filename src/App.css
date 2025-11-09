@@ -42,14 +42,11 @@
     max-width: 188px;
 }
 
-.city_box_cover {
-    margin-bottom: 20px;
-}
-
 .city_box_cover h4 {
     color: #fff;
     font-size: 20px;
     font-weight: 600;
+    margin-bottom: 0;
 }
 
 .city_box_cover i {
@@ -143,12 +140,32 @@
 }
 
 .seven_box .days_btn {
-	padding: 5px 11px;
-	height: auto;
-	font-size: 14px;
-	width: 100%;
-	background-color: rgba(0,0,0,0.4);
-	color: #fff;
+    padding: 5px 11px;
+    height: auto;
+    font-size: 14px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    display: none;
+}
+
+.city_weather_box {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.border-btn {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 13px;
+    padding: 4px 8px;
+}
+
+.hide_desk_box {
     display: none;
 }
 
@@ -209,12 +226,16 @@
     .seven_box .days_btn {
         display: block;
     }
+
     .seven_box .ui_list {
         display: none;
     }
+
     .seven_box .ui_list.show {
         display: flex;
+        margin-bottom: 8px;
     }
+
     .hero-content h4 {
         font-size: 14px;
         font-weight: 500;
@@ -222,6 +243,26 @@
 
     .weather_box_cover {
         padding: 8px 11px;
+    }
+
+    .weather_box_cover .seven_box {
+        padding-top: 8px;
+    }
+
+    .hide_desk_box {
+        display: block;
+    }
+
+    .dorne-search-btn>a {
+        font-size: 13px;
+    }
+
+    .dorne-search-form form input {
+        font-size: 12px;
+    }
+
+    .search-form-on .dorne-search-form {
+        height: 100vh;
     }
 
 

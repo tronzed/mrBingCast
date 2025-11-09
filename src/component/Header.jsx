@@ -56,6 +56,11 @@ function Header() {
                                 <Link className="navbar-brand" to="/">
                                     <img className="img-res" src="img/logo.png" alt="" />
                                 </Link>
+                                <div className="dorne-search-btn hide_desk_box">
+                                    <a onClick={() => { setSearchSign(true) }} id="search-btn" href="#">
+                                        <i className="fa fa-search" aria-hidden="true" /> Search By City
+                                    </a>
+                                </div>
                                 <button
                                     className="navbar-toggler"
                                     type="button"
