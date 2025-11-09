@@ -4,7 +4,7 @@ function Footer() {
         <>
 
             {/* ****** Footer Area Start ****** */}
-            <footer className="dorne-footer-area">
+            <footer className="dorne-footer-area hide_mobile">
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-12 text-center">

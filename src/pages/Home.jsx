@@ -149,7 +149,7 @@ function Home() {
             </section>
             {/* ***** Welcome Area End ***** */}
             {/* ***** Catagory Area Start ***** */}
-            <section className="dorne-catagory-area">
+            <section className="dorne-catagory-area hide_mobile">
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
@@ -233,7 +233,7 @@ function Home() {
             </section>
             {/* ***** Catagory Area End ***** */}
             {/* ***** About Area Start ***** */}
-            <section className="dorne-about-area section-padding-0-100">
+            <section className="dorne-about-area section-padding-0-100 hide_mobile">
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
