@@ -142,8 +142,18 @@
     margin-top: 50px;
 }
 
-/* responsive */
+.seven_box .days_btn {
+	padding: 5px 11px;
+	height: auto;
+	font-size: 14px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.4);
+	color: #fff;
+    display: none;
+}
 
+
+/* responsive */
 
 @media screen and (max-width:768px) {
 
@@ -164,11 +174,12 @@
     .weather_box_cover .list_box li {
         font-size: 14px;
         padding: 2px;
+        width: 50%;
     }
 
     .dorne-welcome-area {
         height: auto;
-        padding: 112px 0 20px;
+        padding: 100px 0 20px;
     }
 
     .seven_box ul {
@@ -194,5 +205,24 @@
     .weather_box_cover {
         margin-bottom: 8px;
     }
+
+    .seven_box .days_btn {
+        display: block;
+    }
+    .seven_box .ui_list {
+        display: none;
+    }
+    .seven_box .ui_list.show {
+        display: flex;
+    }
+    .hero-content h4 {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .weather_box_cover {
+        padding: 8px 11px;
+    }
+
 
 }

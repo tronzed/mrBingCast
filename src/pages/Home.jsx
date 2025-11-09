@@ -13,6 +13,10 @@ function Home() {
 
     const [loader, setLoader] = useState(true);
 
+
+    const [daysShow, setDaysShow] = useState(false);
+
+
     useEffect(() => {
         const fetchData = async () => {
             const data = await getCast();
@@ -66,7 +70,7 @@ function Home() {
                                     <li><span>Now</span><div className="box"><img src={`./img/weather_img/clear-${globalData?.current_weather?.is_day ? "day" : "night"}.svg`} alt="" />{globalData?.current_weather?.is_day ? "Day" : "Night"}</div></li>
                                 </ul>
                                 <div className="seven_box">
-                                    <ul>
+                                    <ul className={`ui_list ${daysShow ? "show" : ""}`}>
                                         <li>
                                             <span className="day_box">{globalData?.daily?.time[0]}</span>
                                             <div className="text_box">
@@ -116,8 +120,9 @@ function Home() {
                                                 <span className="temp_box">{globalData?.daily?.temperature_2m_max[6]}°C</span>
                                             </div>
                                         </li>
-
                                     </ul>
+
+                                    <button onClick={() => { setDaysShow(!daysShow); }} className="btn days_btn">See 7 day forcast</button>
 
                                 </div>
                             </div>
